@@ -48,15 +48,15 @@ Temperature: {current_temperature} {current_temperature_unit}
 Precipitation: {current_precipitation} %
 Wind: {current_wind_speed} {current_wind_direction}""")
             else:
-                print('Uh-Oh something went wrong')
+                print(f"{forecast_response.status_code}: {forecast_response.json()['detail']}")
 
     else:
-        print('Uh-Oh something went wrong')
+        print(f"{main_response.status_code}: {main_response.json()['detail']}")
 
 
 print('This is a US weather app')
-lat = 0
-lon = 0
+lat = 30
+lon = -100
 while lat < 30 or lat > 48:
     lat = int(input("Input your latitude in range 30,48:"))
 while lon < -120 or lon > -70:
