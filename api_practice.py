@@ -1,10 +1,14 @@
 import requests
 import os
 
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv('weatherapi_key')
+
 os.system('cls')
 
 url = 'https://testing'
-api_key = 'asdghalkjdfhblakfdas'
 
 headers = {
     'application': 'json',

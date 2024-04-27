@@ -1,13 +1,12 @@
 import requests
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+api_key = os.getenv('restcountries_key')
+
 url = "https://restcountries.com/v3.1/all"
-
-api_key = 'fd565215d3msh4ffdfc403716382p11574fjsn77d353a475e1'
-
-# headers = {
-#     'X-RapidAPI-Key': f'{api_key}',
-#     'X-RapidAPI-Host': 'api-basketball.p.rapidapi.com'
-# }
 
 def get_data():
     response = requests.get(url = url)

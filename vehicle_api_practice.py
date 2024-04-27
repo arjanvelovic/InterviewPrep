@@ -2,6 +2,8 @@ import requests
 import os
 import platform
 import logging
+from dotenv import load_dotenv
+load_dotenv()
 
 if platform.system() == 'Windows':
     platform_clear = 'cls'
@@ -222,7 +224,7 @@ Please select a following option:
 
 def main():
     url = "https://vehicle-z65p.onrender.com/api/vehiclesapi"
-    api_token = '682b0fadb5b82904c2f815d804124fe781eb14fdf620d41f'
+    api_token = os.getenv('vehicleapi_key')
 
     headers = {
             'Content-Type': 'application/json',
